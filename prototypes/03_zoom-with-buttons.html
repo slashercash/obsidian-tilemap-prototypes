@@ -1,0 +1,87 @@
+<style>
+    :root {
+        --grid-size: 30
+    }
+    .mysupergrid {
+        margin: 20px;
+    }
+    .mysupergrid span {
+        display: flex;
+        gap: 0px;
+        flex-wrap: wrap;
+        width: min-content;
+        margin: auto;
+    }
+    .mysupergrid section {
+        display: inherit;
+        gap: inherit;
+    }
+    .mysupergrid section div {
+        height: var(--grid-size);
+        width: var(--grid-size);
+        background-color: green;
+        box-shadow: inset 0 0 0 1px black;
+    }
+    .mysupergrid section .left-slab,
+    .mysupergrid section .right-slab,
+    .mysupergrid section .up-slab,
+    .mysupergrid section .down-slab {
+        position: absolute;
+        background-color: unset;
+    }
+
+    .mysupergrid section .left-slab::before,
+    .mysupergrid section .right-slab::before,
+    .mysupergrid section .up-slab::before,
+    .mysupergrid section .down-slab::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0 0 0 1px black;
+    }
+
+    .mysupergrid section .left-slab::before {
+        width: 50%;
+        background-color: red;
+    }
+    .mysupergrid section .right-slab::before {
+        width: 50%;
+        right: 0;
+        background-color: violet;
+    }
+    .mysupergrid section .up-slab::before {
+        height: 50%;
+        background-color: yellow;
+    }
+    .mysupergrid section .down-slab::before {
+        height: 50%;
+        bottom: 0;
+        background-color: lightblue;
+    }
+</style>
+
+<body>
+    <div class="mysupergrid">
+        <button onclick="
+            var r = document.querySelector(':root');
+            var size = Number(r.style.getPropertyValue('--grid-size'));
+            if (size === 0) size = 30;
+            if (size < 199) r.style.setProperty('--grid-size', size + 5);
+            ">+</button>
+        <button onclick="
+            var r = document.querySelector(':root');
+            var size = Number(r.style.getPropertyValue('--grid-size'));
+            if (size === 0) size = 30;
+            if (size > 6) r.style.setProperty('--grid-size', size - 5);
+            ">-</button>
+        <span>
+            <section><div><div class="left-slab"></div></div><div></div><div></div><div></div><div></div><div></div></section>
+            <section><div><div class="right-slab"></div></div><div></div><div><div></div></div><div></div><div></div><div></div></section>
+            <section><div><div class="down-slab"></div></div><div></div><div></div><div></div><div></div><div></div></section>
+            <section><div><div class="up-slab"></div></div><div><div class="left-slab"></div></div><div></div><div></div><div></div><div></div></section>
+            <section><div><div class="up-slab"></div><div class="right-slab"></div><div class="down-slab"></div></div><div></div><div></div><div></div><div></div><div></div></section>
+            <section><div></div><div></div><div></div><div></div><div></div><div></div></section>
+        </span>
+    </div>
+</body>
