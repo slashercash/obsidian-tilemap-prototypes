@@ -1,0 +1,142 @@
+<style>
+    .mysupergrid {
+        display: flex;
+        gap: 0px;
+        flex-wrap: wrap;
+        width: min-content;
+        margin: 20px auto;
+    }
+    .mysupergrid section {
+        display: inherit;
+        gap: inherit;
+    }
+    .mysupergrid div {
+        height: 30px;
+        width: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .mysupergrid .element-type-circle::before {
+        content: '';
+        border: solid 3px;
+        box-sizing: border-box;
+        width: 80%;
+        height: 80%;
+        border-radius: 100%;
+    }
+    .mysupergrid .element-type-barrier-h::before,
+    .mysupergrid .element-type-barrier-v::before {
+        content: '';
+        border-style: solid;
+        box-sizing: border-box;
+        width: 100%;
+        height: 40%;
+        border-width: 2px 0;
+    }
+    .mysupergrid .element-type-barrier-v::before {
+        width: 40%;
+        height: 100%;
+        border-width: 0 2px;
+    }
+    .mysupergrid .element-type-square::before {
+        content: '';
+        box-sizing: border-box;
+        width: 50%;
+        height: 50%;
+        border-radius: 5px;
+        border: solid 2px;
+    }
+    .mysupergrid .element-type-handrail-n,
+    .mysupergrid .element-type-handrail-e,
+    .mysupergrid .element-type-handrail-s,
+    .mysupergrid .element-type-handrail-w,
+    .mysupergrid .element-type-handrail-nw,
+    .mysupergrid .element-type-handrail-ne,
+    .mysupergrid .element-type-handrail-se,
+    .mysupergrid .element-type-handrail-sw {
+        position: relative;
+    }
+    .mysupergrid .element-type-handrail-n::before,
+    .mysupergrid .element-type-handrail-e::before,
+    .mysupergrid .element-type-handrail-s::before,
+    .mysupergrid .element-type-handrail-w::before,
+    .mysupergrid .element-type-handrail-nw::before,
+    .mysupergrid .element-type-handrail-nw::after,
+    .mysupergrid .element-type-handrail-ne::before,
+    .mysupergrid .element-type-handrail-ne::after,
+    .mysupergrid .element-type-handrail-se::before,
+    .mysupergrid .element-type-handrail-se::after,
+    .mysupergrid .element-type-handrail-sw::before,
+    .mysupergrid .element-type-handrail-sw::after {
+        content: '';
+        border-style: solid;
+        box-sizing: border-box;
+        position: absolute;
+        width: 100%;
+        height: 30%;
+        border-width: 1px 9px;
+        inset: 0 auto auto 0; 
+    }
+    .mysupergrid .element-type-handrail-e::before,
+    .mysupergrid .element-type-handrail-w::before,
+    .mysupergrid .element-type-handrail-nw::before,
+    .mysupergrid .element-type-handrail-ne::before,
+    .mysupergrid .element-type-handrail-sw::before,
+    .mysupergrid .element-type-handrail-se::before {
+        width: 30%;
+        height: 100%;
+        border-width: 9px 1px;
+    }
+    .mysupergrid .element-type-handrail-e::before,
+    .mysupergrid .element-type-handrail-ne::before,
+    .mysupergrid .element-type-handrail-se::before,
+    .mysupergrid .element-type-handrail-s::before,
+    .mysupergrid .element-type-handrail-se::after,
+    .mysupergrid .element-type-handrail-sw::after {
+        inset: auto 0 0 auto;
+    } 
+    .mysupergrid .element-color-blue::before,
+    .mysupergrid .element-color-blue::after {
+        background-color: blue;
+        border-color: rgb(2, 2, 135);
+    }
+    .mysupergrid .element-color-yellow::before {
+        background-color: yellow;
+        border-color: rgb(167, 167, 0);
+    }
+    .mysupergrid .element-color-green::before {
+        background-color: rgb(0, 208, 0);
+        border-color: rgb(0, 135, 0);
+    }
+    .mysupergrid .element-color-red::before {
+        background-color: red;
+        border-color: rgb(129, 0, 0);
+    }
+    .mysupergrid .tile-color-blue {
+        background-color: rgb(149, 149, 255);
+        box-shadow: 0px 0px 0px 0.5px rgb(116, 116, 255) inset;
+    }
+</style>
+
+<body>
+    <div class="mysupergrid">
+        <section><div></div><div></div><div></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div></div><div></div><div></div></section>
+        <section><div></div><div></div><div></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div></div><div></div><div></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="element-type-handrail-nw element-color-blue"></div><div class="element-type-handrail-n element-color-blue"></div><div class="tile-color-blue element-type-handrail-n element-color-blue"></div><div class="tile-color-blue element-type-handrail-n element-color-blue"></div><div class="tile-color-blue element-type-handrail-n element-color-blue"></div><div class="tile-color-blue element-type-handrail-n element-color-blue"></div><div class="tile-color-blue element-type-handrail-n element-color-blue"></div><div class="element-type-handrail-n element-color-blue"></div><div class="element-type-handrail-ne element-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="element-type-handrail-w element-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="element-type-handrail-e element-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="element-type-handrail-w element-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="element-type-handrail-e element-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="element-type-handrail-w element-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="element-type-handrail-e element-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="element-type-handrail-w element-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="element-type-handrail-e element-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div></div><div></div><div></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div></div><div></div><div></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div></div></section>
+        <section><div></div><div></div><div class="tile-color-blue element-type-barrier-h element-color-blue"></div><div class="tile-color-blue element-type-barrier-h element-color-blue"></div><div class="tile-color-blue element-type-barrier-h element-color-blue"></div><div></div><div></div><div></div><div></div><div></div><div class="tile-color-blue element-type-barrier-h element-color-yellow"></div><div class="tile-color-blue element-type-barrier-h element-color-yellow"></div><div class="tile-color-blue element-type-barrier-h element-color-yellow"></div><div></div><div></div><div></div><div></div><div></div><div class="tile-color-blue element-type-barrier-h element-color-green"></div><div class="tile-color-blue element-type-barrier-h element-color-green"></div><div class="tile-color-blue element-type-barrier-h element-color-green"></div><div></div><div></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue element-type-square element-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue element-type-square element-color-yellow"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue element-type-square element-color-green"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue element-type-circle element-color-red"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+        <section><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div><div class="tile-color-blue"></div></section>
+    </div>
+</body>
