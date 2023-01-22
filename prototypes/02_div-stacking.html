@@ -1,0 +1,72 @@
+<style>
+    .mysupergrid {
+        margin: 20px;
+    }
+    .mysupergrid span {
+        display: flex;
+        gap: 0px;
+        flex-wrap: wrap;
+        width: min-content;
+        margin: auto;
+    }
+    .mysupergrid section {
+        display: inherit;
+        gap: inherit;
+    }
+    .mysupergrid section div {
+        height: 30px;
+        width: 30px;
+        background-color: green;
+        box-shadow: inset 0 0 0 1px black;
+    }
+    .mysupergrid section .left-slab,
+    .mysupergrid section .right-slab,
+    .mysupergrid section .up-slab,
+    .mysupergrid section .down-slab {
+        position: absolute;
+        background-color: unset;
+    }
+
+    .mysupergrid section .left-slab::before,
+    .mysupergrid section .right-slab::before,
+    .mysupergrid section .up-slab::before,
+    .mysupergrid section .down-slab::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0 0 0 1px black;
+    }
+
+    .mysupergrid section .left-slab::before {
+        width: 15px;
+        background-color: red;
+    }
+    .mysupergrid section .right-slab::before {
+        width: 15px;
+        right: 0;
+        background-color: violet;
+    }
+    .mysupergrid section .up-slab::before {
+        height: 15px;
+        background-color: yellow;
+    }
+    .mysupergrid section .down-slab::before {
+        height: 15px;
+        bottom: 0;
+        background-color: lightblue;
+    }
+</style>
+
+<body>
+    <div class="mysupergrid">
+        <span>
+            <section><div><div class="left-slab"></div></div><div></div><div></div><div></div><div></div><div></div></section>
+            <section><div><div class="right-slab"></div></div><div></div><div><div></div></div><div></div><div></div><div></div></section>
+            <section><div><div class="down-slab"></div></div><div></div><div></div><div></div><div></div><div></div></section>
+            <section><div><div class="up-slab"></div></div><div><div class="left-slab"></div></div><div></div><div></div><div></div><div></div></section>
+            <section><div><div class="up-slab"></div><div class="right-slab"></div><div class="down-slab"></div></div><div></div><div></div><div></div><div></div><div></div></section>
+            <section><div></div><div></div><div></div><div></div><div></div><div></div></section>
+        </span>
+    </div>
+</body>
